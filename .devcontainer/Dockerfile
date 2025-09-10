@@ -8,7 +8,7 @@ RUN apt-get update \
 ENV LANG ja_JP.UTF-8
 
 
-WORKDIR /develop/ghoul_git
+WORKDIR /developer/ghoul_git
 
 USER ubuntu
 

@@ -4,7 +4,9 @@ services:
       context: .
       dockerfile: ./Dockerfile
     tty: true
+    ports:
+      - 8080:8080
     volumes:
-      - ..:/develop/ghoul_git
+      - ..:/developer/ghoul_git
 
 
