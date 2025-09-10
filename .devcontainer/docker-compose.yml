@@ -1,0 +1,10 @@
+services:
+  ghoul:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    tty: true
+    volumes:
+      - ..:/develop/ghoul_git
+
+

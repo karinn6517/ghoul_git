@@ -1,0 +1,19 @@
+{
+  "name": "Ghoul develop container",
+  "dockerComposeFile": "./docker-compose.yml",
+  "service": "ghoul",
+  "workspaceFolder": "/developer/ghoul_git",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
+      "extensions": [
+        "loiane.angular-extension-pack",
+        "vscjava.vscode-java-pack",
+        "esbenp.prettier-vscode",
+        "vscodevim.vim"
+      ]
+    }
+  }
+}
