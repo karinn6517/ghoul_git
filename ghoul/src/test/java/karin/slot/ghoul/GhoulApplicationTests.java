@@ -1,4 +1,4 @@
-package karin.slot.ghoul.ghoul;
+package karin.slot.ghoul;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

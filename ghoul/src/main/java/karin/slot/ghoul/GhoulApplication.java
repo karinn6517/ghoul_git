@@ -1,4 +1,4 @@
-package karin.slot.ghoul.ghoul;
+package karin.slot.ghoul;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

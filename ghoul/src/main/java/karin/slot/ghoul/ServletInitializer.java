@@ -1,4 +1,4 @@
-package karin.slot.ghoul.ghoul;
+package karin.slot.ghoul;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

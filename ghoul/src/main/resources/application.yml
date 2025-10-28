@@ -1,0 +1,25 @@
+# Spring Boot + Thymeleaf 用の基本設定例
+spring:
+  resources:
+    chain:
+      enabled: true
+      strategy:
+        content:
+          enabled: true
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+  profiles:
+    active: local
+server:
+  port: 8080
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.springframework.web.servlet.resource: DEBUG
