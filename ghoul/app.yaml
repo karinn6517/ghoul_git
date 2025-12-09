@@ -1,0 +1,11 @@
+runtime: java
+env: flex
+entrypoint: java -jar build/libs/ghoul-0.0.1-SNAPSHOT.jar
+
+# 任意の設定例
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 3
+resources:
+  cpu: 1
+  memory_gb: 1

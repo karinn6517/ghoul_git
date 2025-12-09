@@ -2,5 +2,9 @@ button {
   height: 10rem;
 }
 
+.toggled {
+  background-color: darkgoldenrod;
+}
+
 /** css の内容を変更する際には毎回 css のファイル名を変えましょう **/
 

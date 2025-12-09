@@ -16,8 +16,14 @@ spring:
       content-type: text/html
   profiles:
     active: local
+
 server:
-  port: 8080
+  address: 0.0.0.0
+  port: ${PORT:8080}
+  servlet:
+    session:
+      timeout: 1d
+
 logging:
   level:
     root: INFO

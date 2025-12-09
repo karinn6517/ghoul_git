@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Debug JUnit Tests (ghoul)",
+      "request": "launch",
+      "mainClass": "",
+      "projectName": "ghoul",
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "/developer/ghoul_git/ghoul-475802-025d8bd0d538.json"
+      }
+    }
+    ,
+    {
+      "type": "java",
+      "name": "Debug Spring Boot (ghoul)",
+      "request": "launch",
+      "mainClass": "karin.slot.ghoul.GhoulApplication",
+      "projectName": "ghoul",
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "/developer/ghoul_git/ghoul-475802-025d8bd0d538.json"
+      }
+    }
+  ]
+}

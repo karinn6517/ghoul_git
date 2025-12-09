@@ -1,4 +1,14 @@
 {
   "java.compile.nullAnalysis.mode": "automatic",
-  "java.configuration.updateBuildConfiguration": "interactive"
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "java.test.config": [
+    {
+      "name": "ghoul",
+      "workingDirectory": "${workspaceFolder}/ghoul",
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${workspaceFolder}/ghoul-475802-025d8bd0d538.json"
+      }
+    }
+  ]
+
 }

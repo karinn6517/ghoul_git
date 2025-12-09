@@ -26,6 +26,8 @@ repositories {
 }
 
 dependencies {
+	implementation("com.google.cloud:google-cloud-datastore:2.22.0")
+
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	compileOnly("org.projectlombok:lombok")

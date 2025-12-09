@@ -12,8 +12,10 @@ public class GhoulController {
 
   // path の mapping
   @GetMapping("/")
-  public String redirectRoot() {
+  public String redirectRoot(HttpSession session) {
     // redirect root to /ghoul
+    // Attribute されてるものをクリアする
+    session.removeAttribute("ghoulForm");
     return "redirect:/ghoul";
   }
 
@@ -30,28 +32,36 @@ public class GhoulController {
   public String sessionSample(@PathVariable String action, HttpSession session) {
     var ghoulForm = (GhoulForm) session.getAttribute("ghoulForm");
     if (ghoulForm == null) {
-      ghoulForm = new GhoulForm();
-    } else {
-      if (action.equals("one")) {
-        ghoulForm.setTotal1(ghoulForm.getTotal1() + 1);
-      } else if (action.equals("two")) {
-        ghoulForm.setTotal2(ghoulForm.getTotal2() + 1);
-      } else if (action.equals("three")) {
-        ghoulForm.setTotal3(ghoulForm.getTotal3() + 1);
-      } else if (action.equals("four")) {
-        ghoulForm.setTotal4(ghoulForm.getTotal4() + 1);
-      } else if (action.equals("oneHit")) {
-        ghoulForm.setCount1(ghoulForm.getCount1() + 1);
-      } else if (action.equals("twoHit")) {
-        ghoulForm.setCount2(ghoulForm.getCount2() + 1);
-      } else if (action.equals("threeHit")) {
-        ghoulForm.setCount3(ghoulForm.getCount3() + 1);
-      } else if (action.equals("fourHit")) {
-        ghoulForm.setCount4(ghoulForm.getCount4() + 1);
-      } else if (action.equals("kk")) {
-        ghoulForm.setKk(ghoulForm.getKk() + 1);
-      }
+      return "redirect:/ghoul";
     }
+
+    int delta = ghoulForm.isToggleFlag() ? -1 : 1;
+    // int delta = 1;
+    // if (ghoulForm.isToggleFlag() == true) {
+    // delta = -1;
+    // }
+    if (action.equals("one")) {
+      ghoulForm.setTotal1(ghoulForm.getTotal1() + delta);
+    } else if (action.equals("two")) {
+      ghoulForm.setTotal2(ghoulForm.getTotal2() + delta);
+    } else if (action.equals("three")) {
+      ghoulForm.setTotal3(ghoulForm.getTotal3() + delta);
+    } else if (action.equals("four")) {
+      ghoulForm.setTotal4(ghoulForm.getTotal4() + delta);
+    } else if (action.equals("oneHit")) {
+      ghoulForm.setCount1(ghoulForm.getCount1() + delta);
+    } else if (action.equals("twoHit")) {
+      ghoulForm.setCount2(ghoulForm.getCount2() + delta);
+    } else if (action.equals("threeHit")) {
+      ghoulForm.setCount3(ghoulForm.getCount3() + delta);
+    } else if (action.equals("fourHit")) {
+      ghoulForm.setCount4(ghoulForm.getCount4() + delta);
+    } else if (action.equals("kk")) {
+      ghoulForm.setKk(ghoulForm.getKk() + delta);
+    } else if (action.equals("toggle")) {
+      ghoulForm.setToggleFlag(!ghoulForm.isToggleFlag());
+    }
+
     session.setAttribute("ghoulForm", ghoulForm);
     return "ghoul";
   }
